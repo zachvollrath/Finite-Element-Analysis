@@ -1,0 +1,27 @@
+[project]
+name = "fea-boltzmann"
+version = "0.1.0"
+description = "Surface finite-element solver for the linear Boltzmann equation on the sphere"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "scipy",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib"]
+dev = ["pytest", "matplotlib"]
+
+[project.scripts]
+fea-boltzmann = "fea_boltzmann.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
